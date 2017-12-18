@@ -4,7 +4,7 @@ const Lokka = require('lokka').Lokka;
 const Transport = require('lokka-transport-http').Transport;
 const ghpages = require('gh-pages');
 
-const token = '6bc9e8c7b6e17ef1c514c65bab8a3e1b2fa99327';
+const token = process.env.GITHUB_TOKEN;
 
 const client = new Lokka({
     transport: new Transport('https://api.github.com/graphql', {

@@ -74,6 +74,9 @@ layout: layout
                 <!-- 多说 Share end-->
                 <% } %>
 
+                <% if(page.url){%> <a href="<%- page.url %>">在 Github 上讨论</a><% }%>
+
+
                 <ul class="pager">
                     <% if (page.prev){ %>
                         <li class="previous">
