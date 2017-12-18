@@ -1,0 +1,12 @@
+{
+  "name": "issue2blog",
+  "version": "0.0.1",
+  "scripts": {
+    "pub": "node main.js"
+  },
+  "dependencies": {
+    "gh-pages": "^1.1.0",
+    "lokka": "^1.7.0",
+    "lokka-transport-http": "^1.6.1"
+  }
+}
