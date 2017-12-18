@@ -1,8 +1,9 @@
 const fs = require('fs');
+const path = require('path');
 const {execSync} = require('child_process');
 const Lokka = require('lokka').Lokka;
 const Transport = require('lokka-transport-http').Transport;
-const ghpages = require('gh-pages');
+const Hexo = require('hexo');
 
 const token = process.env.GITHUB_TOKEN;
 
@@ -53,15 +54,17 @@ ${body}`;
         fs.writeFileSync(`hexo/source/_posts/${title}.md`, mdContent);
     });
     console.info('更新 md 完毕');
-    execSync(`hexo clean -cmd hexo`);
-    execSync(`hexo generate -cmd hexo`);
+    execSync(`rm -rf hexo/public`);
+    fs.mkdirSync('hexo/public');
     fs.writeFileSync('hexo/public/CNAME', 'wuhaolin.cn');
-    ghpages.publish('hexo/public', (err) => {
-        if (err) {
-            console.error(err);
-        } else {
-            console.info('上传完毕');
-        }
+
+    const hexo = new Hexo(path.resolve(process.cwd(), 'hexo'), {});
+    hexo.init().then(function () {
+        hexo.call('generate', {
+            deploy: true,
+        }).then(function () {
+            // ...
+        });
     });
 }).catch(err => {
     console.error(err);
