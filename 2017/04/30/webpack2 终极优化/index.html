@@ -50,6 +50,13 @@
 
     <!-- ga & ba script hoook -->
     <script></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9697944574373240",
+        });
+    </script>
 </head>
 
 
@@ -257,7 +264,7 @@
 <h3 id="分析输出结果"><a href="#分析输出结果" class="headerlink" title="分析输出结果"></a>分析输出结果</h3><p>如果你对当前的配置输出或者构建速度不满意，webpack有一个工具叫做<a href="https://webpack.github.io/analyse/" target="_blank" rel="noopener">webpack analyze</a> 以可视化的方式直观的分析构建，来进一步优化构建结果和速度。要使用它你需要在执行webpack的时候带上<code>--json --profile</code>2个参数，这代表让webpack把构建结果以json输出并带上构建性能信息，使用如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack --json --profile &gt; stats.json</span><br></pre></td></tr></table></figure></p>
 <p>会生产一个<code>stats.json</code>文件，再打开<a href="https://webpack.github.io/analyse/" target="_blank" rel="noopener">webpack analyze</a> 上传这个文件开始分析。</p>
 <p><strong>最后附上这篇文章所讲到的<a href="https://gist.github.com/gwuhaolin/cebd252a23793e742e6acae90ab63e83" target="_blank" rel="noopener">webpack整体的配置</a>，分为开发环境的<code>webpack.config.js</code>和生产环境的<code>webpack-dist.config.js</code></strong></p>
-<p><a href="https://github.com/gwuhaolin/blog/issues/2" target="_blank" rel="noopener">阅读原文</a></p>
+<p><a href="http://wuhaolin.cn/2017/04/30/webpack2%20%E7%BB%88%E6%9E%81%E4%BC%98%E5%8C%96/">阅读原文</a></p>
 
 
                 <hr>
