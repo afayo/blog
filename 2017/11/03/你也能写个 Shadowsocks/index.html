@@ -371,7 +371,7 @@
 <li>本机开始发送原本应发送到目标服务的数据给代理服务端，由代理服务端完成数据转发。</li>
 </ol>
 <p>以上内容来自 <a href="http://www.ietf.org/rfc/rfc1928.txt" target="_blank" rel="noopener">SOCKS5 协议规范 rfc1928</a>。</p>
-<h2 id="Lightsocks-实现"><a href="#Lightsocks-实现" class="headerlink" title="Lightsocks 实现"></a><a href="https://github.com/gwuhaolin/lightsocks" target="_blank" rel="noopener">Lightsocks</a> 实现</h2><p>要实现 Lightsocks 需要实现两部分：运行在本地的 lightsocks-local，和运行在墙外代理服务器上 lightsocks-server。<br>下面来分别教你如果使用 Golang 来实现它们，采用 Golang 语言的原因在于：性能好、跨平台、适合高并发、学习门槛低。</p>
+<h2 id="Lightsocks-实现"><a href="#Lightsocks-实现" class="headerlink" title="Lightsocks 实现"></a><a href="https://github.com/gwuhaolin/lightsocks" target="_blank" rel="noopener">Lightsocks</a> 实现</h2><p>要实现 Lightsocks 需要实现两部分：运行在本地的 lightsocks-local，和运行在墙外代理服务器上 lightsocks-server。<br>下面来分别教你如果使用 Golang 来实现它们，采用 Golang 语言的原因在于：性能好、跨平台、适合高并发、学习门槛低。对Golang感兴趣？请看<a href="http://go.wuhaolin.cn/" target="_blank" rel="noopener">Golang 中文学习资料汇总</a></p>
 <h4 id="实现数据混淆"><a href="#实现数据混淆" class="headerlink" title="实现数据混淆"></a>实现数据混淆</h4><p>在 Shadowsocks 中是采用的标准的对称加密算法去实现数据混淆的，对称算法在加密和解密过程中需要大量计算。<br>为了简单起见，Lightsocks 将采用最简单高效的方法去实现数据混淆，具体原理如下。</p>
 <p>这个数据混淆算法和对称加密很相似，两端都需要有同样的密钥。<br>这个密钥有如下要求：</p>
 <ul>
